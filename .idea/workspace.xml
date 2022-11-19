@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="27bd485d-ee0f-4eca-b3d7-f9828573270b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_29.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Trabajo Practico N 3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Controlador/conexion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Controlador/consultas.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/MundialFutbolQatar2022$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/MundialFutbolQatar2022.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaConfiguracion$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaConfiguracion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaPais.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/btnEditor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/miModelo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/renderer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Futbolista.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Pais.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Sede.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controlador/conexion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controlador/consultas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelo/Futbolista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelo/Pais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Modelo/Sede.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/MundialFutbolQatar2022.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaConfiguracion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaNuevoFutbolista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaPais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/ventanaFutbolista.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HjimqgwI7rWK0uWEMFdv91fCHm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/seba-/Downloads/mysql-connector-java-8.0.29.jar",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Vista" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ventanaFutbolista">
+    <configuration name="MundialFutbolQatar2022" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.MundialFutbolQatar2022" />
+      <module name="Trabajo Practico N 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VentanaConfiguracion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaConfiguracion" />
+      <module name="Trabajo Practico N 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ventanaFutbolista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.ventanaFutbolista" />
+      <module name="Trabajo Practico N 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ventanaFutbolista" />
+        <item itemvalue="Application.VentanaConfiguracion" />
+        <item itemvalue="Application.MundialFutbolQatar2022" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27bd485d-ee0f-4eca-b3d7-f9828573270b" name="Changes" comment="" />
+      <created>1668805056548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668805056548</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Vista/ventanaFutbolista.java</url>
+          <line>156</line>
+          <properties class="Vista.ventanaFutbolista" method="pedirTabla">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
