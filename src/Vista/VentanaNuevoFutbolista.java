@@ -14,19 +14,20 @@ public class VentanaNuevoFutbolista extends JFrame{
    private JPanel panel,panel1,panel2,panel3,panel4,panel5,panel6,panel7,panelIzq, panelDer;
    private static Futbolista f;
    private static VentanaNuevoFutbolista nf;
-   private boolean estado = false;
    private VentanaNuevoFutbolista()
    {
 
         super("Nuevo Futbolista");
         this.setSize(800,500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         //this.setResizable(false);
         acomodarComponentes();
         this.setVisible(true);
 
    }
+
+
    public static VentanaNuevoFutbolista getNuevoFutbolista()
    {
        if(nf == null)
@@ -96,21 +97,7 @@ public class VentanaNuevoFutbolista extends JFrame{
        textDocumento.setFont(new Font("Letra",Font.PLAIN,20));
        /*----------------------------------------------------------------*/
        //Funccion para que el boton guarde los datos
-       guardar.addActionListener(new ActionListener() {
-           @Override
-           public void actionPerformed(ActionEvent e) {
-                f = new Futbolista();
-               f.setNombre(textNombre.getText());
-               f.setApellido(textApellido.getText());
-               f.setDocIdentidad(textDocumento.getText());
-               f.setEmail(textEmail.getText());
-               f.setTelefono(textTelefono.getText());
-               String s = textPais.getText();
-               f.setPais(Integer.parseInt(s));
-               estado = true;
-               consultas.modificarFutbolista(ventanaFutbolista.ID(),f);
-           }
-       });
+       guardar.addActionListener(new miAction());
 
        /*----------------------------------------------------------------*/
        //Interiores de los paneles
@@ -284,5 +271,27 @@ public class VentanaNuevoFutbolista extends JFrame{
        new VentanaNuevoFutbolista();
 
    }
+   public void cerrarVentana()
+   {
+       this.dispose();
+   }
+
+    private class miAction implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            f = new Futbolista();
+            f.setNombre(textNombre.getText());
+            f.setApellido(textApellido.getText());
+            f.setDocIdentidad(textDocumento.getText());
+            f.setEmail(textEmail.getText());
+            f.setTelefono(textTelefono.getText());
+            String s = textPais.getText();
+            f.setPais(Integer.parseInt(s));
+            consultas.ingresarFutbolista(f);
+            dispose();
+        }
+
+    }
 
 }

@@ -2,6 +2,7 @@ package Vista;
 
 import Controlador.consultas;
 import Controlador.conexion;
+import modelo.Futbolista;
 
 import javax.swing.*;
 import javax.swing.table.*;
@@ -52,7 +53,8 @@ public class ventanaFutbolista extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 VentanaNuevoFutbolista.getNuevoFutbolista();
-                consultas.ingresarFutbolista(VentanaNuevoFutbolista.getFutbolista());
+
+
             }
         });
         boton2 = new JButton("Exportar CVS");
@@ -60,7 +62,7 @@ public class ventanaFutbolista extends JFrame {
         boton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setVisible(false);
+                dispose();
             }
         });
         constructorTabla();
@@ -111,7 +113,7 @@ public class ventanaFutbolista extends JFrame {
         boton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                   VentanaNuevoFutbolista.getNuevoFutbolista();
+                   VentanaEditarFutbolista.getEditarFutbolista();
             }
         });
         boton5 = new JButton("Eliminar");
@@ -121,7 +123,7 @@ public class ventanaFutbolista extends JFrame {
                 consultas.eliminarFutbolista(id);
             }
         });
-        pedirTabla();
+        threadTabla();
         tabla.setModel(new miModelo(rs,rsmd,nombreColumnas));
         tabla.getColumn(" ").setCellRenderer(new renderer("Modificar"));
         tabla.getColumn(" ").setCellEditor(new btnEditor(new JCheckBox(),boton4));
@@ -154,19 +156,38 @@ public class ventanaFutbolista extends JFrame {
     {
         new ventanaFutbolista();
     }
-    public void pedirTabla() {
-        Connection c = conexion.GetConexion("mundial_futbol_2022","root","Sebastian667");
-        try {
-            String query = "select * from futbolista";
-            Statement st = c.createStatement();
-            st = c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            rs = st.executeQuery(query);
-            rsmd = rs.getMetaData();
-        } catch (Exception e)
+    public  void threadTabla()
+    {
+        mostrarTabla ms =new mostrarTabla();
+        ms.start();
+        while(ms.isAlive())
         {
-            e.printStackTrace();
+            try{
+                ms.join();
+            }catch(InterruptedException e)
+            {
+                e.printStackTrace();
+            }
         }
     }
+    private class  mostrarTabla extends Thread{
+
+        public void run()
+        {
+            Connection c = conexion.GetConexion("mundial_futbol_2022","root","Sebastian667");
+            try {
+                String query = "select * from futbolista";
+                Statement st = c.createStatement();
+                st = c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                rs = st.executeQuery(query);
+                rsmd = rs.getMetaData();
+            } catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+            }
+        }
+
 }
  class miModelo extends AbstractTableModel {
 
@@ -259,6 +280,8 @@ class btnEditor extends DefaultCellEditor{
         return new String(label);
     }
 }
+
+
 
 
 

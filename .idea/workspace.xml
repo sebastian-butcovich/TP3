@@ -2,50 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27bd485d-ee0f-4eca-b3d7-f9828573270b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Trabajo Practico N 3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Controlador/conexion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Controlador/consultas.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/MundialFutbolQatar2022$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/MundialFutbolQatar2022.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaConfiguracion$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaConfiguracion.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaPais.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/btnEditor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/miModelo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/renderer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Futbolista.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Pais.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/modelo/Sede.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controlador/conexion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controlador/consultas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Futbolista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Pais.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Modelo/Sede.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vista/MundialFutbolQatar2022.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaConfiguracion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaNuevoFutbolista.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaPais.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vista/ventanaFutbolista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vista/VentanaEditarFutbolista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaNuevoFutbolista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaPais.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/VentanaPais.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/btnEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/btnEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/miModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/miModelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/renderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/renderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Trabajo Practico N 3/Vista/ventanaFutbolista.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/VentanaNuevoFutbolista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/VentanaNuevoFutbolista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/VentanaPais.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/VentanaPais.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/ventanaFutbolista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vista/ventanaFutbolista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,7 +48,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/seba-/Downloads/mysql-connector-java-8.0.29.jar",
+    "last_opened_file_path": "C:/Users/seba-/OneDrive/Escritorio/Mi Carpeta/UNIVERSIDAD/Cursada Año 2022/Segundo Cuatrimestre/Taller de lenguaje 2",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2"
@@ -74,7 +59,7 @@
       <recent name="Vista" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ventanaFutbolista">
+  <component name="RunManager" selected="Application.VentanaPais">
     <configuration name="MundialFutbolQatar2022" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Vista.MundialFutbolQatar2022" />
       <module name="Trabajo Practico N 3" />
@@ -101,6 +86,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VentanaPais" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaPais" />
+      <module name="Trabajo Practico N 3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ventanaFutbolista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Vista.ventanaFutbolista" />
       <module name="Trabajo Practico N 3" />
@@ -116,6 +114,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VentanaPais" />
         <item itemvalue="Application.ventanaFutbolista" />
         <item itemvalue="Application.VentanaConfiguracion" />
         <item itemvalue="Application.MundialFutbolQatar2022" />
@@ -147,14 +146,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Vista/ventanaFutbolista.java</url>
-          <line>156</line>
-          <properties class="Vista.ventanaFutbolista" method="pedirTabla">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Vista/VentanaPais.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

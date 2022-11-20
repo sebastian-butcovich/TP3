@@ -1,9 +1,15 @@
 package Vista;
 
 import Controlador.conexion;
+import Controlador.consultas;
 
 import javax.swing.*;
+import javax.swing.table.TableModel;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.*;
 
 public class VentanaPais extends JFrame {
@@ -11,6 +17,7 @@ public class VentanaPais extends JFrame {
     private JPanel panel,paneLabel,panelBotones,panelTabla,interno ;
     private JTable tabla;
     private JLabel nombreTabla;
+    private static int  id;
     private String[] nombre={"ID","Nombre","Idioma"," ","  "};
     public VentanaPais()
     {
@@ -29,7 +36,19 @@ public class VentanaPais extends JFrame {
         nuevo = new JButton("Nuevo");
         volver = new JButton("Volver");
         modificar = new JButton("Modificar");
+        modificar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
         eliminar = new JButton("Eliminar");
+        eliminar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                consultas.eliminarPais(id);
+            }
+        });
         panel = new JPanel();
         paneLabel = new JPanel();
         panelBotones = new JPanel();
@@ -53,6 +72,21 @@ public class VentanaPais extends JFrame {
         tabla.getColumn(" ").setCellEditor(new btnEditor(new JCheckBox(),modificar));
         tabla.getColumn("  ").setCellRenderer(new renderer("Eliminar"));
         tabla.getColumn("  ").setCellEditor(new btnEditor(new JCheckBox(),eliminar));
+        tabla.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                int row = e.getY()/tabla.getRowHeight();
+                int column =  tabla.getColumnModel().getColumnIndexAtX(e.getX());
+                Object value;
+                if(row >= 0 && row < tabla.getRowCount() && column >= 0 && column< tabla.getColumnCount())
+                {
+                    TableModel tm = tabla.getModel();
+                    id = (int) tm.getValueAt(row,0);
+                    System.out.println(id);
+                }
+            }
+        });
         /*------------------------------- Posicionar Componentes ------------------------------------------*/
 
         acomodarPaneles();
