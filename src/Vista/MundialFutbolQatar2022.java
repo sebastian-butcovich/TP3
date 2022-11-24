@@ -3,6 +3,8 @@ import  javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.util.jar.JarEntry;
 
 public class MundialFutbolQatar2022 extends JFrame {
         private JButton boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8;
@@ -22,18 +24,37 @@ public class MundialFutbolQatar2022 extends JFrame {
         public void inicializarComponentes()
         {
             panel = new JPanel(new GridBagLayout());
+            panel.setBackground(Color.BLACK);
             panel1 = new JPanel(new GridBagLayout());
             panel2 = new JPanel(new GridBagLayout());
             panel3 = new JPanel(new GridBagLayout());
             panel4 = new JPanel(new GridBagLayout());
             boton1 = new JButton("Boton Futbolista");
             boton2 = new JButton("Boton Pais");
+            boton2.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new VentanaPais();
+                }
+            });
             boton3 = new JButton("Sin Definir");
             boton4 = new JButton("Sin Definir");
             boton5 = new JButton("Sin Definir");
             boton6 = new JButton("Sin Definir");
             boton7 = new JButton("Logo 1");
+            boton7.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new Thread(new mostrarVentanaEstadisticas()).start();
+                }
+            });
             boton8 = new JButton("Logo 2");
+            boton8.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new VentanaConfiguracion();
+                }
+            });
             boton1.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -86,19 +107,33 @@ public class MundialFutbolQatar2022 extends JFrame {
             g2.gridx = 0;
             g2.gridy = 0;
             g2.gridwidth = 1;
-            g2.gridheight = 1;
-            g2.weightx = 0.5;
-            g2.weighty = 0.5;
+            g2.gridheight = 2;
+            g2.weightx = .5;
+            g2.weighty = .5;
             g2.insets = new Insets(10,10,10,10);
             g2.fill = GridBagConstraints.BOTH;
-            panel1.add(boton7,g2);
-            g2.gridx = 1;
-            g2.gridy = 0;
+            panel1.add(new JPanel(),g2);
             g2.gridheight = 1;
-            g2.gridwidth = 1;
-            g2.weightx = 0.5;
-            g2.weighty = 0.5;
+            g2.gridx = 1;
+            panel1.add(new JPanel(),g2);
+            g2.gridx =3;
+            g2.gridheight = 2;
+            panel1.add(new JPanel(),g2);
+            g2.gridheight = 1;
+            g2.gridy = 1;
+            g2.gridx = 1;
+            g2.weightx = 1.0;
+            g2.weighty = 1.0;
+            panel1.add(boton7,g2);
+            g2.gridx = 2;
             panel1.add(boton8,g2);
+            g2.gridheight = 1;
+            g2.gridy =2;
+            g2.gridx =0;
+            g2.gridwidth = 3;
+            g2.weightx = .5;
+            g2.weighty = .5;
+            panel1.add(new JPanel(),g2);
         }
         public void acomodarBotonesCentrales()
         {
@@ -142,4 +177,13 @@ public class MundialFutbolQatar2022 extends JFrame {
         {
             new MundialFutbolQatar2022();
         }
+}
+class mostrarVentanaEstadisticas implements Runnable
+{
+    @Override
+    public void run()
+    {
+        new Estadisticas();
+    }
+
 }

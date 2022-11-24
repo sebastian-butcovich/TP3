@@ -1,4 +1,5 @@
 package Vista;
+import Controlador.conexion;
 import Controlador.consultas;
 import modelo.Futbolista;
 
@@ -6,6 +7,10 @@ import  javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JList;
 
 public class VentanaNuevoFutbolista extends JFrame{
    private JLabel nombre, apellido, email, telefono, pais,documento;
@@ -14,6 +19,7 @@ public class VentanaNuevoFutbolista extends JFrame{
    private JPanel panel,panel1,panel2,panel3,panel4,panel5,panel6,panel7,panelIzq, panelDer;
    private static Futbolista f;
    private static VentanaNuevoFutbolista nf;
+   private JList<String> list;
    private VentanaNuevoFutbolista()
    {
 
@@ -98,6 +104,27 @@ public class VentanaNuevoFutbolista extends JFrame{
        /*----------------------------------------------------------------*/
        //Funccion para que el boton guarde los datos
        guardar.addActionListener(new miAction());
+       Connection c = conexion.getConexion();
+       try{
+           Statement st =c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+           ResultSet rs2 =st.executeQuery("select idpais from pais");
+           rs2.last();
+           String[] idletra = new String[rs2.getRow()];
+           rs2.close();
+           ResultSet rs =st.executeQuery("select idpais,nombre from pais");
+           int i=0;
+           while(rs.next())
+           {
+                idletra[i]= rs.getInt("idpais")+" "+rs.getString("nombre");
+
+                i++;
+
+           }
+           list = new JList<String>(idletra);
+       }catch(Exception e)
+       {
+           e.printStackTrace();
+       }
 
        /*----------------------------------------------------------------*/
        //Interiores de los paneles
@@ -208,7 +235,7 @@ public class VentanaNuevoFutbolista extends JFrame{
        g.gridy = 1;
        panel5.add(pais,g);
        g.gridx = 2;
-       panel5.add(textPais,g);
+       panel5.add(new JScrollPane(list),g);
        g.gridx =3;
        panel5.add(new JPanel(),g);
        g.gridy = 2;
@@ -267,10 +294,6 @@ public class VentanaNuevoFutbolista extends JFrame{
         return f;
     }
 
-   public static void main(String [] args){
-       new VentanaNuevoFutbolista();
-
-   }
    public void cerrarVentana()
    {
        this.dispose();
@@ -281,13 +304,13 @@ public class VentanaNuevoFutbolista extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             f = new Futbolista();
-            f.setNombre(textNombre.getText());
+            f.setNombre(textNombre.getText().replaceAll("",""));
             f.setApellido(textApellido.getText());
             f.setDocIdentidad(textDocumento.getText());
             f.setEmail(textEmail.getText());
             f.setTelefono(textTelefono.getText());
-            String s = textPais.getText();
-            f.setPais(Integer.parseInt(s));
+            String[] s =list.getSelectedValue().split(" ");
+            f.setPais(Integer.parseInt(s[0]));
             consultas.ingresarFutbolista(f);
             dispose();
         }

@@ -23,30 +23,53 @@ public class VentanaPais extends JFrame {
     {
         this.setTitle("Pais");
         this.setSize(800,500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         posicionarComponentes();
         this.add(panel);
         this.setVisible(true);
+    }
+    public static int getId()
+    {
+        return id;
     }
     public void posicionarComponentes()
     {
         /*-------------------------------Inicializar Componentes ------------------------------------------*/
         GridBagConstraints g = new GridBagConstraints();
         nuevo = new JButton("Nuevo");
+        nuevo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new VentanaNuevoPais();
+            }
+        });
         volver = new JButton("Volver");
+        volver.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
         modificar = new JButton("Modificar");
         modificar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new VentanaModificarPais();
             }
         });
         eliminar = new JButton("Eliminar");
         eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                consultas.eliminarPais(id);
+
+                int rta = JOptionPane.showConfirmDialog(null,"Desea eliminar esta entrada?","Confirmacion",JOptionPane.YES_NO_OPTION);
+                if(rta==0) {
+                    consultas.eliminarPais(id);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"No se eliminara esta entrada");
+                }
             }
         });
         panel = new JPanel();
@@ -59,9 +82,9 @@ public class VentanaPais extends JFrame {
         ResultSet rs;
         ResultSetMetaData rsmd;
         try{
-            Connection c= conexion.GetConexion("mundial_futbol_2022","root","Sebastian667");
+            Connection c= conexion.getConexion();
             Statement st = c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            rs = st.executeQuery("select * from pais");
+            rs = st.executeQuery("select * from pais order by(nombre)");
             rsmd = rs.getMetaData();
             tabla.setModel(new miModelo(rs,rsmd,nombre));
         }catch(Exception e)
@@ -184,10 +207,6 @@ public class VentanaPais extends JFrame {
         g.weighty = 1.0;
         g.fill = GridBagConstraints.BOTH;
         panelTabla.add(new JScrollPane(tabla),g);
-    }
-    public static void main(String[]args)
-    {
-        new VentanaPais();
     }
 
 }

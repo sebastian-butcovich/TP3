@@ -1,4 +1,5 @@
 package Vista;
+
 import Controlador.consultas;
 import Modelo.Pais;
 import  javax.swing.*;
@@ -6,14 +7,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaNuevoPais extends JFrame{
+public class VentanaModificarPais extends JFrame{
     private JLabel labelNombre,labelIdioma;
     private JTextField textNombre,textIdioma;
     private JButton guardar;
     private JPanel panel,panel1,panel2,panelBoton,fila1,fila2;
-    public VentanaNuevoPais()
+    public VentanaModificarPais()
     {
-        this.setTitle("Nuevo Pais");
+        this.setTitle("Modificar Pais");
         this.setSize(800,500);
         this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -65,28 +66,28 @@ public class VentanaNuevoPais extends JFrame{
     public void acomodarPanelFila1()
     {
         GridBagConstraints g = new GridBagConstraints();
-      panel1.setLayout(new GridBagLayout());
-      g.fill = GridBagConstraints.BOTH;
-      g.gridx = 0;
-      g.gridy = 0;
-      g.gridheight = 2;
-      g.weightx = 0.5;
-      g.weighty = 0.5;
-      panel1.add(new JPanel(),g);
-      g.gridheight = 1;
-      g.weightx = 1.0;
-      g.weighty = 1.0;
-      g.gridx = 1;
-      panel1.add(fila1,g);
-      g.gridy = 1;
-      panel1.add(fila2,g);
-      g.gridx=2;
-      g.gridy=0;
-      g.gridheight =2;
-      g.weightx = .4;
-      g.weighty = .4;
-      panel1.add(new JPanel(),g);
-      acomodarFilas();
+        panel1.setLayout(new GridBagLayout());
+        g.fill = GridBagConstraints.BOTH;
+        g.gridx = 0;
+        g.gridy = 0;
+        g.gridheight = 2;
+        g.weightx = 0.5;
+        g.weighty = 0.5;
+        panel1.add(new JPanel(),g);
+        g.gridheight = 1;
+        g.weightx = 1.0;
+        g.weighty = 1.0;
+        g.gridx = 1;
+        panel1.add(fila1,g);
+        g.gridy = 1;
+        panel1.add(fila2,g);
+        g.gridx=2;
+        g.gridy=0;
+        g.gridheight =2;
+        g.weightx = .4;
+        g.weighty = .4;
+        panel1.add(new JPanel(),g);
+        acomodarFilas();
     }
     public void acomodarFilas()
     {
@@ -116,7 +117,7 @@ public class VentanaNuevoPais extends JFrame{
         g.gridx = 3;
         fila1.add(new JPanel(),g);
 
-       /*--------------------------------------------------------------*/
+        /*--------------------------------------------------------------*/
         fila2.setLayout(new GridBagLayout());
         //fila1.setBackground(Color.BLUE);
         g.weightx = 1.0;
@@ -175,14 +176,13 @@ public class VentanaNuevoPais extends JFrame{
 
     }
 
-
-   private  class funcionBoton implements ActionListener {
+    private  class funcionBoton implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e){
             Pais p = new Pais();
             p.setNombre(textNombre.getText());
             p.setIdioma(textIdioma.getText());
-            consultas.ingresarPais(p);
+            consultas.modificarPais(VentanaPais.getId(),p);
             dispose();
         }
 

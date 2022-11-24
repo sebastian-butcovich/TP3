@@ -11,6 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 
 public class ventanaFutbolista extends JFrame {
@@ -29,7 +33,7 @@ public class ventanaFutbolista extends JFrame {
     {
         this.setTitle("FUTBOLISTA");
         this.setSize(800,500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setLocationRelativeTo(null);
         acomodarComponentes();
 
@@ -57,7 +61,33 @@ public class ventanaFutbolista extends JFrame {
 
             }
         });
-        boton2 = new JButton("Exportar CVS");
+        boton2 = new JButton("Exportar CSV");
+        boton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    BufferedWriter br= new BufferedWriter(new FileWriter("jugadores.csv"));
+                    TableModel modelo = tabla.getModel();
+                    for(int i =0; i<modelo.getColumnCount()-2;i++)
+                    {
+                        br.write(modelo.getColumnName(i)+",");
+                    }
+                    br.write("\n");
+                    for(int k=0; k<modelo.getRowCount();k++)
+                    {
+                        for(int j=0; j<modelo.getColumnCount()-2;j++)
+                        {
+                            br.write( modelo.getValueAt(k,j)+",");
+                        }
+                        br.write("\n");
+                    }
+                    br.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
         boton3 = new JButton("Volver");
         boton3.addActionListener(new ActionListener() {
             @Override
@@ -66,7 +96,6 @@ public class ventanaFutbolista extends JFrame {
             }
         });
         constructorTabla();
-        js.add(tabla);
 
         g.gridx = 0;
         g.gridy = 0;
@@ -120,10 +149,16 @@ public class ventanaFutbolista extends JFrame {
         boton5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                consultas.eliminarFutbolista(id);
+                int rta = JOptionPane.showConfirmDialog(null,"Desea eliminar esta entrada?","Confirmacion",JOptionPane.YES_NO_OPTION);
+                if(rta==0) {
+                    consultas.eliminarFutbolista(id);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"No se eliminara esta entrada");
+                }
             }
         });
-        threadTabla();
+        parametrosTabla();
         tabla.setModel(new miModelo(rs,rsmd,nombreColumnas));
         tabla.getColumn(" ").setCellRenderer(new renderer("Modificar"));
         tabla.getColumn(" ").setCellEditor(new btnEditor(new JCheckBox(),boton4));
@@ -152,31 +187,13 @@ public class ventanaFutbolista extends JFrame {
         return id;
     }
 
-    public static void main(String[]args)
-    {
-        new ventanaFutbolista();
-    }
-    public  void threadTabla()
-    {
-        mostrarTabla ms =new mostrarTabla();
-        ms.start();
-        while(ms.isAlive())
-        {
-            try{
-                ms.join();
-            }catch(InterruptedException e)
-            {
-                e.printStackTrace();
-            }
-        }
-    }
-    private class  mostrarTabla extends Thread{
 
-        public void run()
-        {
+
+    public void parametrosTabla()
+    {
             Connection c = conexion.GetConexion("mundial_futbol_2022","root","Sebastian667");
             try {
-                String query = "select * from futbolista";
+                String query = "select * from futbolista order by(nombre)";
                 Statement st = c.createStatement();
                 st = c.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 rs = st.executeQuery(query);
@@ -185,10 +202,9 @@ public class ventanaFutbolista extends JFrame {
             {
                 e.printStackTrace();
             }
-            }
         }
+    }
 
-}
  class miModelo extends AbstractTableModel {
 
     private ResultSet rs;

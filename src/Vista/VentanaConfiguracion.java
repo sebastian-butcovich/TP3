@@ -15,7 +15,7 @@ public class VentanaConfiguracion extends JFrame {
     private JPanel panel;
     public VentanaConfiguracion()
     {
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(HIDE_ON_CLOSE);
         this.setSize(500,500);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -29,7 +29,7 @@ public class VentanaConfiguracion extends JFrame {
         label2 = new JLabel("Password");
         text1 = new JTextField(20);
         text2 = new JTextField(20);
-        boton = new JButton("Guardar");
+        boton = new JButton("Conectar");
         boton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +82,7 @@ public class VentanaConfiguracion extends JFrame {
     }
    public void cambiarVisibilidad()
    {
-       this.setVisible(false);
+       this.dispose();
    }
 
     public static void main(String[]args)

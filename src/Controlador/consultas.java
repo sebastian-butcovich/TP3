@@ -124,6 +124,23 @@ public class consultas {
 			return false;
 		}
 	}
+	public static boolean modificarPais(int id,Pais p)
+	{
+		PreparedStatement ps =null;
+		String sql = "update pais set nombre = ?, idioma = ? where idpais = ?";
+		try{
+			ps = conexion.getConexion().prepareStatement(sql);
+			ps.setString(1,p.getNombre());
+			ps.setString(2,p.getIdioma());
+			ps.setInt(3,id);
+			ps.execute();
+			return true;
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return false;
+		}
+	}
 	public static boolean  eliminarFutbolista(int f)
 	{
 		PreparedStatement st =null;
