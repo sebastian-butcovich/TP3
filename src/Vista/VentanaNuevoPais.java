@@ -1,6 +1,8 @@
 package Vista;
-import Controlador.consultas;
 import Modelo.Pais;
+import PatronDAO.PaisDAO;
+import PatronDAO.PaisJDBC;
+
 import  javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -180,9 +182,10 @@ public class VentanaNuevoPais extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e){
             Pais p = new Pais();
+            PaisDAO pd = new PaisJDBC();
             p.setNombre(textNombre.getText());
             p.setIdioma(textIdioma.getText());
-            consultas.ingresarPais(p);
+            pd.agregarPais(p);
             dispose();
         }
 

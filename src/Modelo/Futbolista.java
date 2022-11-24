@@ -1,4 +1,4 @@
-package modelo;
+package Modelo;
 
 public class Futbolista {
 	private String nombre;

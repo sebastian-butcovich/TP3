@@ -1,7 +1,8 @@
 package Vista;
 
-import Controlador.consultas;
-import modelo.Futbolista;
+import Modelo.Futbolista;
+import PatronDAO.FutbolistaDAO;
+import PatronDAO.FutbolistaJDBC;
 
 import  javax.swing.*;
 import java.awt.*;
@@ -282,6 +283,7 @@ public class VentanaEditarFutbolista extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             f = new Futbolista();
+            FutbolistaDAO fd = new FutbolistaJDBC();
             f.setNombre(textNombre.getText());
             f.setApellido(textApellido.getText());
             f.setDocIdentidad(textDocumento.getText());
@@ -289,7 +291,7 @@ public class VentanaEditarFutbolista extends JFrame{
             f.setTelefono(textTelefono.getText());
             String s = textPais.getText();
             f.setPais(Integer.parseInt(s));
-            consultas.modificarFutbolista(ventanaFutbolista.ID(),f);
+            fd.actualizarFutbolista(ventanaFutbolista.ID(),f);
             cerrarVentana();
         }
 

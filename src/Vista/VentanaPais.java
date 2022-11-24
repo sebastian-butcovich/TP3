@@ -1,7 +1,8 @@
 package Vista;
 
 import Controlador.conexion;
-import Controlador.consultas;
+import PatronDAO.PaisDAO;
+import PatronDAO.PaisJDBC;
 
 import javax.swing.*;
 import javax.swing.table.TableModel;
@@ -62,10 +63,10 @@ public class VentanaPais extends JFrame {
         eliminar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                PaisDAO pd = new PaisJDBC();
                 int rta = JOptionPane.showConfirmDialog(null,"Desea eliminar esta entrada?","Confirmacion",JOptionPane.YES_NO_OPTION);
                 if(rta==0) {
-                    consultas.eliminarPais(id);
+                    pd.eliminarPais(id);
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"No se eliminara esta entrada");

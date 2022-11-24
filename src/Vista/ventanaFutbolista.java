@@ -1,8 +1,8 @@
 package Vista;
 
-import Controlador.consultas;
 import Controlador.conexion;
-import modelo.Futbolista;
+import PatronDAO.FutbolistaDAO;
+import PatronDAO.FutbolistaJDBC;
 
 import javax.swing.*;
 import javax.swing.table.*;
@@ -11,7 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -149,9 +148,10 @@ public class ventanaFutbolista extends JFrame {
         boton5.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                FutbolistaDAO f = new FutbolistaJDBC();
                 int rta = JOptionPane.showConfirmDialog(null,"Desea eliminar esta entrada?","Confirmacion",JOptionPane.YES_NO_OPTION);
                 if(rta==0) {
-                    consultas.eliminarFutbolista(id);
+                    f.eliminarFutbolista(id);
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"No se eliminara esta entrada");
