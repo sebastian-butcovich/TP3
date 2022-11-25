@@ -126,10 +126,6 @@ public class Estadisticas extends JFrame {
         panelBoton.add(new JPanel(),g);
 
     }
-    public static void main(String[]args)
-    {
-        new Estadisticas();
-    }
 
 
 }

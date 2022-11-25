@@ -1,4 +1,5 @@
 package Vista;
+import javax.imageio.ImageIO;
 import  javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -41,14 +42,15 @@ public class MundialFutbolQatar2022 extends JFrame {
             boton4 = new JButton("Sin Definir");
             boton5 = new JButton("Sin Definir");
             boton6 = new JButton("Sin Definir");
-            boton7 = new JButton("Logo 1");
+            boton7 = new JButton("Estadisticas");
+            boton8 = new JButton("Configuracion");
+
             boton7.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new Thread(new mostrarVentanaEstadisticas()).start();
                 }
             });
-            boton8 = new JButton("Logo 2");
             boton8.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -172,10 +174,6 @@ public class MundialFutbolQatar2022 extends JFrame {
             g3.gridwidth = 1;
             g3.gridheight = 1;
             panel2.add(boton6,g3);
-        }
-        public static void main(String[]args)
-        {
-            new MundialFutbolQatar2022();
         }
 }
 class mostrarVentanaEstadisticas implements Runnable

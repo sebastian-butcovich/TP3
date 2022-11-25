@@ -23,19 +23,21 @@ public class FilasTabla {
         for (int i = 0; i < listaCSV.size(); i++) {
             m = listaCSV.get(i);
             estaEnLaTabla(m, lista);
-            if (!ubi.estaLocal) {
+            if (!ubi.getEstaLocal()) {
                 local = new EstructuraTabla();
                 local.setNombrePais(m.getLocal());
                 lista.add(local);
             } else {
-                local = lista.get(ubi.ubicacionLocal);
+                local = lista.get(ubi.getUbicacionLocal());
+
             }
-            if (!ubi.estaVisitante) {
+            if (!ubi.getEstaVisitante()) {
                 visitante = new EstructuraTabla();
                 visitante.setNombrePais(m.getVisitante());
                 lista.add(visitante);
             } else {
-                visitante = lista.get(ubi.ubicacionVisitante);
+                visitante = lista.get(ubi.getUbicacionVisitante());
+
             }
             if (ubi.getEmpate()) {
                 local.setCantPartidosEmpatados(local.getCantPartidosEmpatados() + 1);
@@ -57,14 +59,17 @@ public class FilasTabla {
                     visitante.getTorneosJugados().add(m.getTorneo());
                 }
             }
-            ubi.setEstaVisitante(false);
-            ubi.setEstaLocal(false);
         }
+        lista.sort(new ordenarPorNombre());
         return lista;
 
     }
 
     public static void estaEnLaTabla(ModeloCSV m, ArrayList<EstructuraTabla> lista) {
+        ubi.setUbicacionVisitante(0);
+        ubi.setUbicacionLocal(0);
+        ubi.setEstaVisitante(false);
+        ubi.setEstaLocal(false);
         for (int k = 0; k < lista.size(); k++) {
             if (m.getLocal().equals(lista.get(k).getNombrePais())) {
                 ubi.setEstaLocal(true);
@@ -76,7 +81,6 @@ public class FilasTabla {
 
             }
         }
-
         if (m.getGolesLocales() == m.getGolesVisitantes()) {
             ubi.setEmpate(true);
         } else if (m.getGolesLocales() > m.getGolesVisitantes()) {

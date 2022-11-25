@@ -2,6 +2,7 @@ package Vista;
 
 import Controlador.conexion;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

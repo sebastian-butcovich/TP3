@@ -183,10 +183,18 @@ public class VentanaNuevoPais extends JFrame{
         public void actionPerformed(ActionEvent e){
             Pais p = new Pais();
             PaisDAO pd = new PaisJDBC();
-            p.setNombre(textNombre.getText());
-            p.setIdioma(textIdioma.getText());
-            pd.agregarPais(p);
-            dispose();
+            if (textNombre.getText().matches("[a-zA-Z \s]+") ) {
+                p.setNombre(textNombre.getText().replaceAll("\s", ""));
+            }
+            if (textIdioma.getText().matches("[a-zA-Z \s]+")) {
+                p.setIdioma(textIdioma.getText().replaceAll("\s", ""));
+            }
+            if(!pd.verificarRepetido(p.getNombre())) {
+                pd.agregarPais(p);
+                dispose();
+            }else {
+                JOptionPane.showMessageDialog(null,"El Pais ya se encuentra en la base de datos");
+            }
         }
 
     }

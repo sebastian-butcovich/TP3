@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="mysql-connector-java-8.0.29">
+    <archive path="C:/Users/seba-/Downloads/mysql-connector-java-8.0.29.jar" />
+  </library>
+  <library name="Trabajo Practico N 3">
+    <archive path="C:/Users/seba-/OneDrive/Escritorio/TP 3/Trabajo Practico N 3/out/artifacts/Trabajo_Practico_N_3_jar/Trabajo Practico N 3.jar" />
+  </library>
+</eclipse-userlibraries>
+

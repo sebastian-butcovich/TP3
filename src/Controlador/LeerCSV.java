@@ -1,8 +1,7 @@
 package Controlador;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +17,7 @@ public class LeerCSV {
        String split = ",";
        ModeloCSV m;
        try {
-         file = new FileReader("results.csv");
-         BufferedReader bf = new BufferedReader(file);
+         BufferedReader bf = new BufferedReader(new FileReader("results.csv"));
          lista = new ArrayList<ModeloCSV>();
          linea = bf.readLine();
         while((linea = bf.readLine())!=null)

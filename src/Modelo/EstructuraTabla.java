@@ -1,6 +1,7 @@
 package Modelo;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class EstructuraTabla {
     private String nombrePais;
@@ -46,4 +47,12 @@ public class EstructuraTabla {
     }
     public ArrayList<String> getTorneosJugados(){return torneosJugados;}
 
+}
+class ordenarPorNombre implements Comparator<EstructuraTabla>
+{
+    @Override
+    public int compare(EstructuraTabla t1,EstructuraTabla t2)
+    {
+        return t1.getNombrePais().compareTo(t2.getNombrePais());
+    }
 }

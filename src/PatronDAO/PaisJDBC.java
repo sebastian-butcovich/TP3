@@ -99,20 +99,20 @@ public class PaisJDBC implements PaisDAO{
             e.printStackTrace();
         }
     }
-    public  boolean verificarQueElPaisNoExista(int nombrePais)
+    public  boolean verificarRepetido(String nombrePais)
     {
         Statement ps = null;
         ResultSet rs = null;
         String actual = "";
-        boolean resultado = true;
+        boolean resultado = false;
         try {
             ps = conexion.getConexion().createStatement();
-            rs = ps.executeQuery("select * from pais");
+            rs = ps.executeQuery("select nombre from pais");
             while(rs.next())
             {
                 actual = rs.getString("nombre");
                 if(actual.equals(nombrePais))
-                    resultado = false;
+                    resultado = true;
             }
         }catch(SQLException e)
         {
@@ -120,4 +120,5 @@ public class PaisJDBC implements PaisDAO{
         }
         return resultado;
     }
+
 }

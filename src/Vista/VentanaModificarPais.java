@@ -183,8 +183,12 @@ public class VentanaModificarPais extends JFrame{
         public void actionPerformed(ActionEvent e){
             Pais p = new Pais();
             PaisDAO pd = new PaisJDBC();
-            p.setNombre(textNombre.getText());
-            p.setIdioma(textIdioma.getText());
+            if (textNombre.getText().matches("[a-zA-Z \s]+") ) {
+                p.setNombre(textNombre.getText().replaceAll("\s", ""));
+            }
+            if (textIdioma.getText().matches("[a-zA-Z \s]+")) {
+                p.setIdioma(textIdioma.getText().replaceAll("\s", ""));
+            }
             pd.actualizarPais(VentanaPais.getId(),p);
             dispose();
         }

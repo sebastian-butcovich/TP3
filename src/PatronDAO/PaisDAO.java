@@ -7,5 +7,5 @@ public interface PaisDAO {
     public boolean eliminarPais(int id);
     public boolean actualizarPais(int id,Pais p);
     public void mostrarTablaPais();
-    public  boolean verificarQueElPaisNoExista(int nombrePais);
+    public  boolean verificarRepetido(String nombrePais);
 }
